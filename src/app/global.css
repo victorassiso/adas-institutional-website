@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply font-inter text-foreground border-border;
+
+    /* Custom Scroll Bar */
+    &::-webkit-scrollbar {
+      @apply w-2 h-2;
+    }
+    &::-webkit-scrollbar-track {
+      @apply bg-transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      @apply bg-border rounded-full;
+    }
+  }
+
+  body {
+    @apply bg-background;
+  }
+
+  /* Disable number input arrows */
+  /* Chrome, Safari, Edge, Opera */
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  /* Mozila */
+  input[type='number'] {
+    -moz-appearance: textfield !important;
+  }
+
+  /* Disable autofill decoration */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition:
+    background-color 500000s ease-in-out 0s,
+    color 500000s ease-in-out 0s;
+  }
+}

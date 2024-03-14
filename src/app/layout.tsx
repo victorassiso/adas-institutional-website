@@ -1,5 +1,6 @@
+import './global.css'
+
 import type { Metadata } from 'next'
-import './globals.css'
 
 export const metadata: Metadata = {
   title: 'ADAS | Associação dos Direitos dos Animais de Saquarema',
