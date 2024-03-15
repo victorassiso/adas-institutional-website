@@ -11,7 +11,7 @@ export function Adopt() {
     <div className="relative mt-20 flex flex-col items-center justify-center gap-6 p-4 md:mt-10">
       <Image src={streetDog} alt="" width={300} />
 
-      <span className="text-colorful-milk-chocolate w-96 text-center font-title text-6xl font-bold">
+      <span className="w-96 text-center font-title text-6xl font-bold text-colorful-milk-chocolate">
         NÃO COMPRE, ADOTE!
       </span>
 

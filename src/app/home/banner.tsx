@@ -19,9 +19,9 @@ export function Banner() {
   const xl = useMediaQuery(1280 - 1)
 
   return (
-    <div className="xs:p-8 flex flex-col gap-8 p-6">
+    <div className="flex flex-col gap-8 p-6 xs:p-8">
       <div className="relative h-[340px] sm:flex sm:h-[380px] sm:flex-col sm:gap-4 md:gap-8 xl:h-[410px]">
-        <div className="xs:text-4xl font-title text-3xl font-bold sm:text-5xl lg:text-6xl">
+        <div className="font-title text-3xl font-bold xs:text-4xl sm:text-5xl lg:text-6xl">
           <span className="block">ASSOCIAÇÃO DOS</span>
           <span className="block">DIREITOS DOS</span>
           <span className="block">ANIMAIS DE</span>
@@ -35,7 +35,7 @@ export function Banner() {
               <strong>adoção</strong> e o <strong>bem-estar animal</strong>!
             </p>
             {!md && (
-              <div className="xs:justify-start xs:gap-4 flex items-center justify-between lg:gap-8">
+              <div className="flex items-center justify-between xs:justify-start xs:gap-4 lg:gap-8">
                 <Button
                   asChild
                   className="font-title text-xl font-bold lg:text-2xl"
@@ -66,14 +66,14 @@ export function Banner() {
           src={bannerDog}
           alt="Um cachorro fofo"
           height={xs ? 280 : sm ? 310 : lg ? 340 : xl ? 380 : 420}
-          className="xs:right-3 absolute -right-5 bottom-0 md:right-0"
+          className="absolute -right-5 bottom-0 xs:right-3 md:right-0"
         />
 
         <Image
           src={decoratorFood}
           alt=""
           height={xs ? 45 : lg ? 55 : xl ? 65 : 75}
-          className="xs:left-8 absolute bottom-28 left-3 sm:bottom-6 sm:left-24 md:bottom-40 md:left-auto md:right-[50%]"
+          className="absolute bottom-28 left-3 xs:left-8 sm:bottom-6 sm:left-24 md:bottom-40 md:left-auto md:right-[50%]"
         />
 
         <Image
@@ -87,7 +87,7 @@ export function Banner() {
           src={decoratorRope}
           alt=""
           height={xs ? 25 : lg ? 35 : 45}
-          className="xs:-left-8 xs:-top-8 absolute -left-5 -top-5"
+          className="absolute -left-5 -top-5 xs:-left-8 xs:-top-8"
         />
 
         <Image
