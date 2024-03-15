@@ -1,6 +1,7 @@
 'use client'
 import { ChevronsRight } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
 import { useMediaQuery } from '@/hooks/use-media-query'
@@ -36,16 +37,21 @@ export function Banner() {
             {!md && (
               <div className="xs:justify-start xs:gap-4 flex items-center justify-between lg:gap-8">
                 <Button
+                  asChild
                   className="font-title text-xl font-bold lg:text-2xl"
                   size={lg ? 'default' : 'lg'}
                 >
-                  SAIBA MAIS
+                  <Link href="/sobre">SAIBA MAIS</Link>
                 </Button>
 
-                <div className="flex items-center gap-1 border-b border-black">
-                  <span className="text-sm font-bold">Seja um voluntário</span>
-                  <ChevronsRight />
-                </div>
+                <Link href="/quero-ajudar">
+                  <div className="flex items-center gap-1 border-b border-black">
+                    <span className="text-sm font-bold">
+                      Seja um voluntário
+                    </span>
+                    <ChevronsRight />
+                  </div>
+                </Link>
               </div>
             )}
           </div>
@@ -101,12 +107,16 @@ export function Banner() {
 
       {md && (
         <div className="flex items-center justify-between">
-          <Button className="font-title text-xl font-bold">SAIBA MAIS</Button>
+          <Button asChild className="font-title text-xl font-bold">
+            <Link href="/sobre">SAIBA MAIS</Link>
+          </Button>
 
-          <div className="flex items-center gap-1 border-b border-black">
-            <span className="text-sm">Seja um voluntário</span>
-            <ChevronsRight />
-          </div>
+          <Link href="/quero-ajudar">
+            <div className="flex items-center gap-1 border-b border-black">
+              <span className="text-sm">Seja um voluntário</span>
+              <ChevronsRight />
+            </div>
+          </Link>
         </div>
       )}
     </div>

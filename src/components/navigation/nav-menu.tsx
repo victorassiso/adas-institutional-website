@@ -17,7 +17,8 @@ export function NavMenu() {
             <Menu />
           </SheetTrigger>
           <SheetContent>
-            <div className="flex flex-col items-center justify-start gap-5">
+            <div className="flex flex-col items-center justify-start gap-2">
+              <NavMenuLink to="/">Início</NavMenuLink>
               <NavMenuLink to="/sobre">Sobre</NavMenuLink>
               <NavMenuLink to="/catalogo">Animais para adoção</NavMenuLink>
               <NavMenuLink to="/loja">Loja</NavMenuLink>
@@ -27,6 +28,7 @@ export function NavMenu() {
         </Sheet>
       ) : (
         <div className="flex items-center gap-2">
+          <NavMenuLink to="/">Início</NavMenuLink>
           <NavMenuLink to="/sobre">Sobre</NavMenuLink>
           <NavMenuLink to="/catalogo">Animais para adoção</NavMenuLink>
           <NavMenuLink to="/loja">Loja</NavMenuLink>
