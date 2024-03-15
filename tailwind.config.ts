@@ -72,6 +72,7 @@ const config = {
           'tart-orange': '#FF4646',
           'light-cobalt-blue': '#8EB1E5',
           milk: '#FFFBF5',
+          'milk-chocolate': '#89502B',
           'infra-red': '#C5043F',
           'celtic-blue': '#1F6EC0',
           'june-bud-green': '#B1E054',

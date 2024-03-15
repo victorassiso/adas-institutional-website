@@ -1,10 +1,11 @@
-import Banner from './home/banner'
+import { Adopt } from './home/adopt'
+import { Banner } from './home/banner'
 
 export default function Home() {
   return (
     <div>
       <Banner />
-      {/* <div>Adote</div> */}
+      <Adopt />
     </div>
   )
 }
