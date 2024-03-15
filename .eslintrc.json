@@ -9,6 +9,6 @@
   ],
   "rules": {
     "simple-import-sort/imports": "error",
-    "import/newline-after-import": "error",
+    "import/newline-after-import": "error"
   }
 }

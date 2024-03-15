@@ -3,15 +3,14 @@ import Image from 'next/image'
 
 export function Footer() {
   return (
-    <div className="text-muted-foreground flex flex-col gap-8 bg-zinc-800 px-10 pb-2 pt-5">
-
-      <div className="flex gap-8 flex-col">
-        <div className="flex items-center gap-1.5 justify-center">
+    <div className="flex flex-col gap-8 bg-zinc-800 px-10 pb-2 pt-5 text-muted-foreground">
+      <div className="flex flex-col gap-8">
+        <div className="flex items-center justify-center gap-1.5">
           <Image src={'logo.svg'} alt="Logo" width={30} height={30} />
           <span className="font-title text-2xl font-bold">ADAS</span>
         </div>
 
-        <div className="text-muted-foreground flex gap-2 flex-col w-full md:flex-row md:gap-8 text-sm items-center justify-center">
+        <div className="flex w-full flex-col items-center justify-center gap-2 text-sm text-muted-foreground md:flex-row md:gap-8">
           <div className="flex items-center gap-1 ">
             <Twitter size={16} />
             <span>ada-saquarema</span>

@@ -21,7 +21,7 @@ export function NavMenuLink({ to, children, className }: NavMenuLinkProps) {
       <Link
         href={to}
         className={cn(
-          'text-muted-foreground group p-4 transition duration-300',
+          'group p-4 text-muted-foreground transition duration-300',
           className,
         )}
       >
@@ -29,7 +29,7 @@ export function NavMenuLink({ to, children, className }: NavMenuLinkProps) {
         <div
           data-current={isActive}
           className={cn(
-            'bg-primary block h-0.5 max-w-0 rounded-sm transition-all duration-500 data-[current=true]:max-w-[80%]',
+            'block h-0.5 max-w-0 rounded-sm bg-primary transition-all duration-500 data-[current=true]:max-w-[80%]',
           )}
         />
       </Link>
