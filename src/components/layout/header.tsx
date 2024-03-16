@@ -9,7 +9,7 @@ import { NavMenu } from '../navigation/nav-menu'
 export function Header() {
   const isBreakpoint = useMediaQuery(768 - 1)
 
-  const imageSize = isBreakpoint ? 36 : 72
+  const imageSize = isBreakpoint ? 40 : 72
 
   return (
     <header className="flex items-center gap-2 px-4 py-5">
