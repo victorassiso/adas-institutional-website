@@ -3,10 +3,10 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { DrawerContent } from '@/components/ui/drawer'
 
-import { AnimalProps } from './animal'
-import { Header } from './animal-details/header'
-import { Properties } from './animal-details/properties'
-import { Protector } from './animal-details/protector'
+import { AnimalProps } from '../animal'
+import { Header } from './animal-details-components/header'
+import { Properties } from './animal-details-components/properties'
+import { Protector } from './animal-details-components/protector'
 
 export function AnimalDetails({
   images,

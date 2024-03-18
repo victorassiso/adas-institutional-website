@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 import { whatsAppRedirect } from '@/utils/whatsAppRedirect'
 
-import { ProtectorProps } from '../animal'
+import { ProtectorProps } from '../../animal'
 
 export function Protector({ image, name, phone }: ProtectorProps) {
   return (
