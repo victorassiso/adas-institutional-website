@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react'
+import { Instagram } from 'lucide-react'
 import Image from 'next/image'
 
 export function Footer() {
@@ -11,24 +11,9 @@ export function Footer() {
         </div>
 
         <div className="flex w-full flex-col items-center justify-center gap-2 text-sm text-muted-foreground md:flex-row md:gap-8">
-          <div className="flex items-center gap-1 ">
-            <Twitter size={16} />
-            <span>ada-saquarema</span>
-          </div>
-
-          <div className="flex items-center gap-1">
-            <Linkedin size={16} />
-            <span>/ada-saquarema</span>
-          </div>
-
-          <div className="flex items-center gap-1">
-            <Facebook size={16} />
-            <span>ada-saquarema</span>
-          </div>
-
           <div className="flex items-center gap-1">
             <Instagram size={16} />
-            <span>ada-saquarema</span>
+            <span>adas-saquarema</span>
           </div>
         </div>
       </div>

@@ -22,12 +22,15 @@ export function AnimalDetails({
   return (
     <DrawerContent>
       <div className="flex flex-col gap-4  overflow-y-scroll px-4 pb-8 pt-4">
-        <div className="">
-          <Image
-            src={avatar || noImageIcon}
-            alt="Foto de perfil do animal"
-            className="rounded-3xl"
-          />
+        <div>
+          <div className="relative aspect-square w-full">
+            <Image
+              src={avatar || noImageIcon}
+              alt="Foto de perfil do animal"
+              className="rounded-3xl object-contain"
+              fill
+            />
+          </div>
         </div>
         <div className="flex flex-col gap-4 px-4">
           <Header

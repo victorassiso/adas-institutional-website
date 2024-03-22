@@ -123,38 +123,47 @@ export default function Catalogo() {
         <div className="flex flex-col gap-2">
           <span className="font-title text-xl font-bold">Categorias</span>
           <div className="flex gap-4">
-            <Button size="sm">Gatos</Button>
-            <Button size="sm">Cachorros</Button>
+            <Button size="sm" className="bg-colorful-bright-yellow">
+              Gatos
+            </Button>
+            <Button size="sm" className="bg-colorful-celtic-blue">
+              Cachorros
+            </Button>
           </div>
         </div>
         <div className="flex flex-col gap-2">
           <span className="font-title text-xl font-bold">Adote um animal</span>
-          {/* <div className="flex gap-12 overflow-x-scroll pb-2"> */}
-          <Carousel className="w-full px-4 pb-2">
+          <Carousel className="px-4 pb-2">
             <CarouselContent className="-ml-8">
               {data.map((animal, i) => {
                 return (
                   <div key={i}>
                     <CarouselItem className="pl-8">
                       <DrawerTrigger
-                        className="rounded-3xl bg-white object-cover"
+                        className="h-full w-52 rounded-3xl bg-white object-cover"
                         onClick={() => setSelectedAnimal(animal)}
                       >
-                        <div className="relative h-60 w-60">
-                          <Image
-                            src={animal.avatar || noImageIcon}
-                            alt="Foto de perfil do animal"
-                            fill
-                            className="rounded-3xl object-cover"
-                          />
+                        <div className="rounded-3xl bg-colorful-june-bud-green">
+                          <div className="relative aspect-square w-full">
+                            <Image
+                              src={animal.avatar || noImageIcon}
+                              alt="Foto de perfil do animal"
+                              fill
+                              className="rounded-3xl object-contain"
+                            />
+                          </div>
                         </div>
+
                         <div className="p-4">
                           <div className="flex items-center justify-between">
-                            <span>{animal.name}</span>
+                            <span className="text-2xl font-black text-primary">
+                              {animal.name}
+                            </span>
                             <Image
-                              src={animal.sex === 'male' ? maleIcon : ''}
+                              src={animal.sex === 'male' ? maleIcon : maleIcon}
                               alt="Foto de perfil"
                               height={20}
+                              width={20}
                             />
                           </div>
                           <div className="flex items-center gap-1 text-muted-foreground">
