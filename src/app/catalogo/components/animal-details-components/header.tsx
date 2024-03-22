@@ -7,10 +7,10 @@ import maleIcon from '~/public/male-icon.svg'
 interface HeaderProps {
   name: string
   sex: 'male' | 'female'
-  location: string
+  address: string
 }
 
-export function Header({ name, sex, location }: HeaderProps) {
+export function Header({ name, sex, address }: HeaderProps) {
   return (
     <div>
       <div>
@@ -24,7 +24,7 @@ export function Header({ name, sex, location }: HeaderProps) {
         </div>
         <div className="flex items-center gap-1 text-muted-foreground">
           <MapPin size={14} />
-          <span className="text-xs">{location}</span>
+          <span className="text-xs">{address}</span>
         </div>
       </div>
     </div>

@@ -1,9 +1,11 @@
 'use client'
 
+import { collection, getDocs } from 'firebase/firestore'
 import { MapPin } from 'lucide-react'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
+import { db } from '@/../firebase'
 import { Button } from '@/components/ui/button'
 import {
   Carousel,
@@ -13,83 +15,107 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel'
 import { Drawer, DrawerTrigger } from '@/components/ui/drawer'
-import gato1 from '~/public/gato1.png'
+// import gato1 from '~/public/gato1.png'
 import maleIcon from '~/public/male-icon.svg'
-import Pessoa1 from '~/public/pessoa1.jpg'
+import noImageIcon from '~/public/no-image-icon.jpg'
 
+// import Pessoa1 from '~/public/pessoa1.jpg'
 import { AnimalProps } from './animal'
 import { AnimalDetails } from './components/animal-details'
 
-const animals: AnimalProps[] = [
-  {
-    name: 'Lucky',
-    location: 'Saquarema, RJ',
-    sex: 'male',
-    size: 'small',
-    weight: 2,
-    images: [gato1],
-    protector: {
-      name: 'Letícia Martins',
-      phone: '+5521995327044',
-      image: Pessoa1,
-    },
-  },
-  {
-    name: 'Dengo',
-    location: 'Saquarema, RJ',
-    sex: 'male',
-    size: 'big',
-    weight: 2,
-    images: [gato1],
-    protector: {
-      name: 'Letícia Martins',
-      phone: '+5521995327044',
-      image: Pessoa1,
-    },
-  },
-  {
-    name: 'Dengo',
-    location: 'Saquarema, RJ',
-    sex: 'male',
-    size: 'big',
-    weight: 2,
-    images: [gato1],
-    protector: {
-      name: 'Letícia Martins',
-      phone: '+5521995327044',
-      image: Pessoa1,
-    },
-  },
-  {
-    name: 'Dengo',
-    location: 'Saquarema, RJ',
-    sex: 'male',
-    size: 'big',
-    weight: 2,
-    images: [gato1],
-    protector: {
-      name: 'Letícia Martins',
-      phone: '+5521995327044',
-      image: Pessoa1,
-    },
-  },
-  {
-    name: 'Dengo',
-    location: 'Saquarema, RJ',
-    sex: 'male',
-    size: 'big',
-    weight: 2,
-    images: [gato1],
-    protector: {
-      name: 'Letícia Martins',
-      phone: '+5521995327044',
-      image: Pessoa1,
-    },
-  },
-]
+// const animals: AnimalProps[] = [
+//   {
+//     name: 'Lucky',
+//     location: 'Saquarema, RJ',
+//     sex: 'male',
+//     size: 'small',
+//     weight: 2,
+//     images: [gato1],
+//     protector: {
+//       name: 'Letícia Martins',
+//       phone: '+5521995327044',
+//       image: Pessoa1,
+//     },
+//   },
+//   {
+//     name: 'Dengo',
+//     location: 'Saquarema, RJ',
+//     sex: 'male',
+//     size: 'big',
+//     weight: 2,
+//     images: [gato1],
+//     protector: {
+//       name: 'Letícia Martins',
+//       phone: '+5521995327044',
+//       image: Pessoa1,
+//     },
+//   },
+//   {
+//     name: 'Dengo',
+//     location: 'Saquarema, RJ',
+//     sex: 'male',
+//     size: 'big',
+//     weight: 2,
+//     images: [gato1],
+//     protector: {
+//       name: 'Letícia Martins',
+//       phone: '+5521995327044',
+//       image: Pessoa1,
+//     },
+//   },
+//   {
+//     name: 'Dengo',
+//     location: 'Saquarema, RJ',
+//     sex: 'male',
+//     size: 'big',
+//     weight: 2,
+//     images: [gato1],
+//     protector: {
+//       name: 'Letícia Martins',
+//       phone: '+5521995327044',
+//       image: Pessoa1,
+//     },
+//   },
+//   {
+//     name: 'Dengo',
+//     location: 'Saquarema, RJ',
+//     sex: 'male',
+//     size: 'big',
+//     weight: 2,
+//     images: [gato1],
+//     protector: {
+//       name: 'Letícia Martins',
+//       phone: '+5521995327044',
+//       image: Pessoa1,
+//     },
+//   },
+// ]
 
 export default function Catalogo() {
   const [selectedAnimal, setSelectedAnimal] = useState<AnimalProps | null>(null)
+  const [data, setData] = useState<AnimalProps[]>([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const list: AnimalProps[] = []
+
+      try {
+        const querySnapshot = await getDocs(collection(db, 'animals'))
+        querySnapshot.forEach((doc) => {
+          list.push({
+            id: doc.id,
+            ...doc.data(),
+          })
+        })
+        setData(list)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+
+    fetchData()
+  }, [])
 
   return (
     <Drawer>
@@ -106,7 +132,7 @@ export default function Catalogo() {
           {/* <div className="flex gap-12 overflow-x-scroll pb-2"> */}
           <Carousel className="w-full px-4 pb-2">
             <CarouselContent className="-ml-8">
-              {animals.map((animal, i) => {
+              {data.map((animal, i) => {
                 return (
                   <div key={i}>
                     <CarouselItem className="pl-8">
@@ -116,7 +142,7 @@ export default function Catalogo() {
                       >
                         <div className="relative h-60 w-60">
                           <Image
-                            src={animal.images[0]}
+                            src={animal.avatar || noImageIcon}
                             alt="Foto de perfil do animal"
                             fill
                             className="rounded-3xl object-cover"
@@ -133,7 +159,7 @@ export default function Catalogo() {
                           </div>
                           <div className="flex items-center gap-1 text-muted-foreground">
                             <MapPin size={14} />
-                            <span className="text-xs">{animal.location}</span>
+                            <span className="text-xs">{animal.address}</span>
                           </div>
                         </div>
                       </DrawerTrigger>

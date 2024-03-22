@@ -5,11 +5,13 @@ export interface ProtectorProps {
 }
 
 export interface AnimalProps {
-  name: string
-  location: string
-  sex: 'male' | 'female'
-  size: 'small' | 'medium' | 'big'
-  weight: number
-  images: string[] | StaticImageData[]
-  protector: ProtectorProps
+  id: string
+  avatar?: string
+  name?: string
+  sex?: 'male' | 'female'
+  size?: 'small' | 'medium' | 'big'
+  weight?: number
+  address?: string
+  protectorName?: string
+  contact?: string
 }

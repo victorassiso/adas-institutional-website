@@ -2,6 +2,7 @@ import Image from 'next/image'
 
 import { Button } from '@/components/ui/button'
 import { DrawerContent } from '@/components/ui/drawer'
+import noImageIcon from '~/public/no-image-icon.jpg'
 
 import { AnimalProps } from '../animal'
 import { Header } from './animal-details-components/header'
@@ -9,31 +10,40 @@ import { Properties } from './animal-details-components/properties'
 import { Protector } from './animal-details-components/protector'
 
 export function AnimalDetails({
-  images,
-  location,
+  avatar,
   name,
-  protector,
   sex,
   size,
   weight,
+  address,
+  protectorName,
+  contact,
 }: AnimalProps) {
   return (
     <DrawerContent>
       <div className="flex flex-col gap-4  overflow-y-scroll px-4 pb-8 pt-4">
         <div className="">
           <Image
-            src={images[0]}
+            src={avatar || noImageIcon}
             alt="Foto de perfil do animal"
             className="rounded-3xl"
           />
         </div>
         <div className="flex flex-col gap-4 px-4">
-          <Header name={name} sex={sex} location={location} />
-          <Properties size={size} sex={sex} weight={weight} />
+          <Header
+            name={name || ''}
+            sex={sex || 'female'}
+            address={address || ''}
+          />
+          <Properties
+            size={size || 'big'}
+            sex={sex || 'female'}
+            weight={weight || 0}
+          />
           <Protector
-            image={protector.image}
-            name={protector.name}
-            phone={protector.phone}
+            image={noImageIcon}
+            name={protectorName || ''}
+            phone={contact || ''}
           />
           <div className="relative pb-24 text-justify">
             <p className="text-muted-foreground">
