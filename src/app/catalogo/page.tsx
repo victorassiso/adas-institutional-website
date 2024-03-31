@@ -23,74 +23,6 @@ import noImageIcon from '~/public/no-image-icon.jpg'
 import { AnimalProps } from './animal'
 import { AnimalDetails } from './components/animal-details'
 
-// const animals: AnimalProps[] = [
-//   {
-//     name: 'Lucky',
-//     location: 'Saquarema, RJ',
-//     sex: 'male',
-//     size: 'small',
-//     weight: 2,
-//     images: [gato1],
-//     protector: {
-//       name: 'Letícia Martins',
-//       phone: '+5521995327044',
-//       image: Pessoa1,
-//     },
-//   },
-//   {
-//     name: 'Dengo',
-//     location: 'Saquarema, RJ',
-//     sex: 'male',
-//     size: 'big',
-//     weight: 2,
-//     images: [gato1],
-//     protector: {
-//       name: 'Letícia Martins',
-//       phone: '+5521995327044',
-//       image: Pessoa1,
-//     },
-//   },
-//   {
-//     name: 'Dengo',
-//     location: 'Saquarema, RJ',
-//     sex: 'male',
-//     size: 'big',
-//     weight: 2,
-//     images: [gato1],
-//     protector: {
-//       name: 'Letícia Martins',
-//       phone: '+5521995327044',
-//       image: Pessoa1,
-//     },
-//   },
-//   {
-//     name: 'Dengo',
-//     location: 'Saquarema, RJ',
-//     sex: 'male',
-//     size: 'big',
-//     weight: 2,
-//     images: [gato1],
-//     protector: {
-//       name: 'Letícia Martins',
-//       phone: '+5521995327044',
-//       image: Pessoa1,
-//     },
-//   },
-//   {
-//     name: 'Dengo',
-//     location: 'Saquarema, RJ',
-//     sex: 'male',
-//     size: 'big',
-//     weight: 2,
-//     images: [gato1],
-//     protector: {
-//       name: 'Letícia Martins',
-//       phone: '+5521995327044',
-//       image: Pessoa1,
-//     },
-//   },
-// ]
-
 export default function Catalogo() {
   const [selectedAnimal, setSelectedAnimal] = useState<AnimalProps | null>(null)
   const [data, setData] = useState<AnimalProps[]>([])
@@ -180,8 +112,6 @@ export default function Catalogo() {
             <CarouselPrevious className="ml-14" />
             <CarouselNext className="mr-14" />
           </Carousel>
-
-          {/* </div> */}
         </div>
       </div>
       {selectedAnimal && <AnimalDetails {...selectedAnimal} />}
