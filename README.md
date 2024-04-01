@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ADAS - Associação dos Direitos dos Animais de Saquarema
 
-## Getting Started
+A beautiful and modern institutional website and a platform for managing the operations of the NGO implementing an animal management system for adoption, volunteer registration, donation platform, blog, and more.
 
-First, run the development server:
+## Features (🏗 In progress...)
+* Adoption animal catalog
+* Adoption form
+* Donation tool
+* Volunteer form
+* Blog
+* Admin platform
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Prints
+<div align="center">
+  <img src="https://media.licdn.com/dms/image/D4D2DAQHkicmhd4xvMA/profile-treasury-image-shrink_1920_1920/0/1711980119789?e=1712588400&v=beta&t=Me4NBc-LvUZeidEvd57oAIHdBIc2n_fhEiY94whovxg" alt="Landing 1" style="height: 400px"/>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  <img src="https://media.licdn.com/dms/image/D4D2DAQEz_bwDWggyfw/profile-treasury-image-shrink_1920_1920/0/1711980149209?e=1712588400&v=beta&t=Xac16sy2BcqnCyV18VXAzp2qTnV5xXjVS9ynA7k2VRI" alt="Landing 2" style="height: 400px"/>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+  <img src="https://media.licdn.com/dms/image/D4D2DAQFcRRAVuycn8A/profile-treasury-image-shrink_1920_1920/0/1711980163768?e=1712588400&v=beta&t=TPQAhJFNqwfE-2U_im6JJF-wt2It-iD56YD0U1e-Mx0" alt="Animal Catalog" style="height: 400px"/>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+  <img src="https://media.licdn.com/dms/image/D4D2DAQF9PE4NQ36eJg/profile-treasury-image-shrink_1920_1920/0/1711980177637?e=1712588400&v=beta&t=qkEa1qOysg1pXYBX_64qhUuP8KNDBL7KjaNZmx6PCbw" alt="Animal Details" style="height: 400px"/>
 
-## Learn More
+  <img src="https://media.licdn.com/dms/image/D4D2DAQE9SQIW2gctIg/profile-treasury-image-shrink_1920_1920/0/1711980196022?e=1712588400&v=beta&t=q5Jc7IqFy4WXvMQ53PeHfwC7dZPpIafp_5-FzLBFVY0" alt="Admin Animal Table 1" style="height: 400px"/>
 
-To learn more about Next.js, take a look at the following resources:
+  <img src="https://media.licdn.com/dms/image/D4D2DAQHPagRDm3JSiw/profile-treasury-image-shrink_1920_1920/0/1711980215846?e=1712588400&v=beta&t=VcQHsqg9mwPrflFZOvj0PHf2jnswgaskXsMeqQN2tW4" alt="Admin Animal Table 2" style="height: 400px"/>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  <img src="https://media.licdn.com/dms/image/D4D2DAQHh7dj5BDyElw/profile-treasury-image-shrink_1920_1920/0/1711980231315?e=1712588400&v=beta&t=vZSbTYWHdvBQS4W5sBLh-7XgGNb5s5C81K3wCecNk2I" alt="Admin Animal Form 1" style="height: 400px"/>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  <img src="https://media.licdn.com/dms/image/D4D2DAQFDRRj8mOOGww/profile-treasury-image-shrink_1920_1920/0/1711980247762?e=1712588400&v=beta&t=G9SACBtQd-SaZ-Q_64Pg7Ykv7lAVG3u0fcuxU_pwCYc" alt="Admin Animal Form 1" style="height: 400px"/>
+</div>
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
