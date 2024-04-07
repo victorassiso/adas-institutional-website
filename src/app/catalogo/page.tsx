@@ -1,27 +1,15 @@
 'use client'
 
 import { collection, getDocs } from 'firebase/firestore'
-import { MapPin } from 'lucide-react'
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 import { db } from '@/../firebase'
 import { Button } from '@/components/ui/button'
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel'
-import { Drawer, DrawerTrigger } from '@/components/ui/drawer'
-// import gato1 from '~/public/gato1.png'
-import maleIcon from '~/public/male-icon.svg'
-import noImageIcon from '~/public/no-image-icon.jpg'
+import { Dialog } from '@/components/ui/dialog'
 
-// import Pessoa1 from '~/public/pessoa1.jpg'
 import { AnimalProps } from './animal'
 import { AnimalDetails } from './components/animal-details'
+import { AnimalCarousel } from './components/mobile/carousel'
 
 export default function Catalogo() {
   const [selectedAnimal, setSelectedAnimal] = useState<AnimalProps | null>(null)
@@ -29,7 +17,6 @@ export default function Catalogo() {
 
   useEffect(() => {
     const fetchData = async () => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const list: AnimalProps[] = []
 
       try {
@@ -49,8 +36,14 @@ export default function Catalogo() {
     fetchData()
   }, [])
 
+  function handleDialogOpening(open: boolean) {
+    setSelectedAnimal(null)
+    console.log(open)
+    return open
+  }
+
   return (
-    <Drawer>
+    <Dialog open={!!selectedAnimal} onOpenChange={handleDialogOpening}>
       <div className="scrol flex flex-col gap-6 p-10">
         <div className="flex flex-col gap-2">
           <span className="font-title text-xl font-bold">Categorias</span>
@@ -65,7 +58,7 @@ export default function Catalogo() {
         </div>
         <div className="flex flex-col gap-2">
           <span className="font-title text-xl font-bold">Adote um animal</span>
-          <Carousel className="px-4 pb-2">
+          {/* <Carousel className="px-4 pb-2">
             <CarouselContent className="-ml-8">
               {data.map((animal, i) => {
                 return (
@@ -111,10 +104,11 @@ export default function Catalogo() {
             </CarouselContent>
             <CarouselPrevious className="ml-14" />
             <CarouselNext className="mr-14" />
-          </Carousel>
+          </Carousel> */}
+          <AnimalCarousel data={data} setSelectedAnimal={setSelectedAnimal} />
         </div>
       </div>
       {selectedAnimal && <AnimalDetails {...selectedAnimal} />}
-    </Drawer>
+    </Dialog>
   )
 }

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 import { Button } from '@/components/ui/button'
-import { DrawerContent } from '@/components/ui/drawer'
+import { DialogContent } from '@/components/ui/dialog'
 import noImageIcon from '~/public/no-image-icon.jpg'
 
 import { AnimalProps } from '../animal'
@@ -20,7 +20,7 @@ export function AnimalDetails({
   contact,
 }: AnimalProps) {
   return (
-    <DrawerContent>
+    <DialogContent>
       <div className="flex flex-col gap-4  overflow-y-scroll px-4 pb-8 pt-4">
         <div>
           <div className="relative aspect-square w-full">
@@ -74,6 +74,6 @@ export function AnimalDetails({
           </div>
         </div>
       </div>
-    </DrawerContent>
+    </DialogContent>
   )
 }
