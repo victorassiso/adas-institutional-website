@@ -4,7 +4,6 @@ import { collection, getDocs } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 
 import { db } from '@/../firebase'
-import { Button } from '@/components/ui/button'
 import { Dialog } from '@/components/ui/dialog'
 
 import { AnimalProps } from './animal'
@@ -45,7 +44,7 @@ export default function Catalogo() {
   return (
     <Dialog open={!!selectedAnimal} onOpenChange={handleDialogOpening}>
       <div className="scrol flex flex-col gap-6 p-10">
-        <div className="flex flex-col gap-2">
+        {/* <div className="flex flex-col gap-2">
           <span className="font-title text-xl font-bold">Categorias</span>
           <div className="flex gap-4">
             <Button size="sm" className="bg-colorful-bright-yellow">
@@ -55,7 +54,7 @@ export default function Catalogo() {
               Cachorros
             </Button>
           </div>
-        </div>
+        </div> */}
         <div className="flex flex-col gap-2">
           <span className="font-title text-xl font-bold">Adote um animal</span>
           {/* <Carousel className="px-4 pb-2">
