@@ -3,8 +3,8 @@
 import { collection, getDocs } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 
-import { db } from '@/../firebase'
 import { Dialog } from '@/components/ui/dialog'
+import { db } from '@/utils/firebase'
 
 import { AnimalProps } from './animal'
 import { AnimalDetails } from './components/animal-details'

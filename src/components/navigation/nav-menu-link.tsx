@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ReactNode } from 'react'
 
@@ -17,8 +18,9 @@ export function NavMenuLink({ to, children, className }: NavMenuLinkProps) {
 
   return (
     <Button asChild variant="ghost" className="flex w-full flex-col gap-1 p-0">
-      <a
-        href={'https://donate.stripe.com/7sI8AaeCJ2G7gUM4gg'}
+      <Link
+        // href={'https://donate.stripe.com/7sI8AaeCJ2G7gUM4gg'}
+        href={to}
         className={cn(
           'w-full rounded-3xl px-4 py-2 text-muted-foreground',
           className,
@@ -33,7 +35,7 @@ export function NavMenuLink({ to, children, className }: NavMenuLinkProps) {
             )}
           />
         </div>
-      </a>
+      </Link>
     </Button>
   )
 }

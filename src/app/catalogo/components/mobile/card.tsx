@@ -14,7 +14,7 @@ interface AnimalCardProps {
 export function AnimalCard({ animal, setSelectedAnimal }: AnimalCardProps) {
   return (
     <div
-      className="h-full w-full rounded-3xl bg-white object-cover"
+      className="h-full w-full cursor-pointer rounded-3xl bg-white object-cover"
       onClick={() => setSelectedAnimal(animal)}
     >
       <div className="rounded-3xl bg-colorful-june-bud-green">

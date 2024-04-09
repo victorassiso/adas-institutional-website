@@ -7,15 +7,15 @@ import { getFirestore } from 'firebase/firestore'
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: 'AIzaSyBeusGEmmy1-n7ujdcvQAUTY06mnkbj7O8',
-  authDomain: 'adas-4a84c.firebaseapp.com',
-  projectId: 'adas-4a84c',
-  storageBucket: 'adas-4a84c.appspot.com',
-  messagingSenderId: '866343344904',
-  appId: '1:866343344904:web:f7f5953d1927bccd412abd',
-  measurementId: 'G-H3RDYWMFJW',
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
 }
-
+console.log(process.env.API_KEY)
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
 // Initialize Cloud Firestore and get a reference to the service
