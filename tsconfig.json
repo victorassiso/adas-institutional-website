@@ -36,7 +36,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/api/check-out.js",
-    "src/app/quero-ajudar/page.jsx" 
+    "src/app/quero-ajudar/page.tsx" 
   ],
   "exclude": [
     "node_modules"
